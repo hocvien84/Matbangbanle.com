@@ -12,9 +12,9 @@ const generatePrompt = (data: FormData): string => {
   return `
     **YÊU CẦU PHÂN TÍCH MẶT BẰNG KINH DOANH**
 
-    **Vai trò:** Bạn là một chuyên gia hàng đầu về phân tích và lựa chọn mặt bằng bán lẻ tại Việt Nam, đặc biệt là cho các cửa hàng tiện lợi.
+    **Vai trò:** Bạn là một chuyên gia hàng đầu về phân tích và lựa chọn mặt bằng bán lẻ tại Việt Nam, đặc biệt là cho mô hình kinh doanh "${data.businessType}".
 
-    **Nhiệm vụ:** Dựa vào các thông tin chi tiết được cung cấp dưới đây, hãy thực hiện một phân tích toàn diện, khách quan và đưa ra đánh giá về tiềm năng của mặt bằng này để mở cửa hàng tiện lợi.
+    **Nhiệm vụ:** Dựa vào các thông tin chi tiết được cung cấp dưới đây, hãy thực hiện một phân tích toàn diện, khách quan và đưa ra đánh giá về tiềm năng của mặt bằng này để mở một "${data.businessType}".
 
     **Trọng số điểm (Thang điểm 100):**
     *   Vị trí, Giao thông & Khách hàng mục tiêu: 40%

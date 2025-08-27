@@ -126,6 +126,16 @@ export const EvaluationResultDisplay: React.FC<EvaluationResultDisplayProps> = (
         </div>
       </div>
 
+      <div className="mt-10 text-center p-6 bg-indigo-50 rounded-lg border border-indigo-200">
+        <h4 className="text-lg font-semibold text-gray-900">Cần tư vấn chuyên sâu?</h4>
+        <p className="mt-2 text-gray-600">
+            Liên hệ chuyên gia để được tư vấn chi tiết và chuẩn xác hơn:
+        </p>
+        <p className="mt-2 font-semibold text-indigo-700 text-lg">
+            <a href="tel:0948458589" className="hover:underline">0948458589</a> - <a href="mailto:vien.nguyenh@gmail.com" className="hover:underline">vien.nguyenh@gmail.com</a>
+        </p>
+      </div>
+
       <div className="pt-5 text-center">
         <button
           onClick={onReset}

@@ -20,6 +20,11 @@ const App: React.FC = () => {
     try {
       const result = await evaluateLocation(formData);
       setEvaluationResult(result);
+      // As a frontend-only application, we cannot directly send emails from a server.
+      // This console log simulates the action for when a backend service is integrated.
+      if (formData.customerEmail) {
+        console.log(`Evaluation complete. A backend service would send results to: ${formData.customerEmail}`);
+      }
     } catch (err) {
       console.error('Lỗi khi gọi Gemini API:', err);
       setError('Đã xảy ra lỗi khi phân tích. Vui lòng thử lại sau. Hãy chắc chắn rằng bạn đã cung cấp API key.');

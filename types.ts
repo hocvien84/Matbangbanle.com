@@ -16,6 +16,8 @@ export interface FormData {
   rent: number;
   paymentMethod: string;
   notes: string;
+  customerEmail: string;
+  customerPhone: string;
 }
 
 export interface DetailedAnalysis {

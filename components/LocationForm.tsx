@@ -25,8 +25,11 @@ const initialFormData: FormData = {
   rent: 20000000,
   paymentMethod: 'Cọc 2 tháng, trả tiền hàng tháng',
   notes: '',
+  customerEmail: '',
+  customerPhone: '',
 };
 
+const businessTypes = ['Cửa hàng tiện lợi', 'Cửa hàng thực phẩm', 'Cửa hàng mẹ và bé', 'Cửa hàng thời trang', 'Cửa hàng hoa quả', 'Quán Trà sữa - cafe'];
 const areaTypes = ['Khu dân cư đông đúc', 'Gần trường học/đại học', 'Khu văn phòng', 'Mặt tiền đường lớn', 'Trong hẻm lớn, đông người qua lại', 'Gần chợ / TTTM', 'Khu công nghiệp'];
 const customerTypes = ['Sinh viên - Học sinh', 'Dân văn phòng', 'Người dân trong khu vực', 'Khách vãng lai', 'Công nhân'];
 const amenityTypes = ['Trường học / Đại học', 'Tòa nhà văn phòng', 'Bệnh viện', 'Trạm xe buýt / Ga tàu', 'Khu dân cư', 'Chợ / TTTM', 'Khu công nghiệp'];
@@ -59,7 +62,9 @@ export const LocationForm: React.FC<LocationFormProps> = ({ onEvaluate, isLoadin
       <FormSection title="Thông tin cơ bản" description="Các thông tin tổng quan về kế hoạch kinh doanh của bạn.">
         <div className="sm:col-span-3">
           <label htmlFor="businessType" className="block text-sm font-medium text-gray-700">Lĩnh vực kinh doanh</label>
-          <input type="text" id="businessType" value={formData.businessType} onChange={e => handleChange('businessType', e.target.value)} disabled className="mt-1 block w-full rounded-md border-gray-300 shadow-sm bg-gray-100 cursor-not-allowed sm:text-sm" />
+           <select id="businessType" value={formData.businessType} onChange={e => handleChange('businessType', e.target.value)} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+            {businessTypes.map(type => <option key={type} value={type}>{type}</option>)}
+          </select>
         </div>
         <div className="sm:col-span-3">
           <label htmlFor="city" className="block text-sm font-medium text-gray-700">Thành phố / Tỉnh</label>
@@ -152,6 +157,17 @@ export const LocationForm: React.FC<LocationFormProps> = ({ onEvaluate, isLoadin
          <div className="sm:col-span-6">
           <label htmlFor="notes" className="block text-sm font-medium text-gray-700">Ghi chú thêm</label>
           <textarea id="notes" value={formData.notes} onChange={e => handleChange('notes', e.target.value)} rows={3} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+        </div>
+      </FormSection>
+
+      <FormSection title="Thông tin liên hệ" description="Nhập thông tin để nhận kết quả phân tích chi tiết qua email.">
+        <div className="sm:col-span-3">
+            <label htmlFor="customerEmail" className="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" name="customerEmail" id="customerEmail" value={formData.customerEmail} onChange={e => handleChange('customerEmail', e.target.value)} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+        </div>
+        <div className="sm:col-span-3">
+            <label htmlFor="customerPhone" className="block text-sm font-medium text-gray-700">Số điện thoại</label>
+            <input type="tel" name="customerPhone" id="customerPhone" value={formData.customerPhone} onChange={e => handleChange('customerPhone', e.target.value)} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
         </div>
       </FormSection>
 
