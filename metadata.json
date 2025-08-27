@@ -1,0 +1,5 @@
+{
+  "name": "Trợ Lý Đánh Giá Mặt Bằng",
+  "description": "Một ứng dụng AI giúp phân tích và chấm điểm tiềm năng của một mặt bằng để mở cửa hàng tiện lợi, dựa trên các tiêu chí quan trọng như vị trí, giá thuê, và tệp khách hàng.",
+  "requestFramePermissions": []
+}
